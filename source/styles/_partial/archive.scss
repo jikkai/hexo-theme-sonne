@@ -1,0 +1,86 @@
+.post {
+    margin: 2rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $color-line;
+    &::after {
+        position: absolute;
+        left: 50%;
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-left: -0.25rem;
+        margin-top: 1.7rem;
+        border: 1px solid $color-line;
+        border-radius: 0.5rem;
+        background: #FFF;
+        display: block;
+        box-shadow: #FFF 0 0 0 0.5rem;
+    }
+    >header {
+        >h1 {
+            @include post-title;
+        }
+    }
+    >footer {
+        margin-top: 1rem;
+        >div {
+            color: $color-post-tag;
+            font-size: 0.9rem;
+            >.category-list {
+                @include post-category;
+            }
+            >time {
+                @include post-time;
+            }
+        }
+        >.tag-list {
+            display: flex;
+            >li {
+                >a {
+                    @include post-tag;
+                }
+            }
+        }
+    }
+}
+
+@media #{$mq-mobile} {
+    .post {
+        margin: 1rem 0;
+        padding-bottom: 1rem;
+        &::after {
+            margin-top: 0.7rem;
+        }
+        >header {
+            >h1 {
+                font-size: 1.4rem;
+            }
+        }
+        >footer {
+            margin-top: 0.4rem;
+            >div {
+                >time {
+                    padding: 0;
+                    font-size: 0.8rem;
+                    border: none;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    >a {
+        padding: 0.2rem 0.8rem;
+        color: $color-post-title;
+        border: 1px solid $color-post-title;
+        border-radius: 0.4rem;
+        display: block;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

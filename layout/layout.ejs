@@ -1,0 +1,8 @@
+<%- partial('_partial/head') %>
+<body>
+    <%- body %>
+<% if (!is_home()) { %>
+    <%- partial('_partial/footer') %>
+<% } %>
+</body>
+</html>

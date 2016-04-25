@@ -1,0 +1,89 @@
+.content {
+    margin: 2rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $color-line;
+    &::after {
+        position: absolute;
+        left: 50%;
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-left: -0.25rem;
+        margin-top: 1.7rem;
+        border: 1px solid $color-line;
+        border-radius: 0.5rem;
+        background: #FFF;
+        display: block;
+        box-shadow: #FFF 0 0 0 0.5rem;
+    }
+    >section {
+        a {
+            color: $color-post-title;
+            border-bottom: 1px dashed $color-post-title;
+        }
+        img {
+            max-width: 100%;
+            margin: auto;
+            border: 1px solid $color-link;
+            display: block;
+            cursor: pointer;
+        }
+        code {
+            padding: 2px 4px;
+            color: #C7254E;
+            font-family: $font-mono;
+            font-size: 0.9rem;
+            word-wrap: break-word;
+            background: #F9F2F4;
+            border-radius: 2px;
+        }
+        blockquote {
+            margin-left: 0;
+            margin-right: 0;
+            font-style: italic;
+            border-left: 2px solid $color-line;
+        }
+        .highlight {
+            overflow: auto;
+            pre {
+                margin-bottom: 0;
+                border: none;
+                background: none;
+            }
+            table {
+                width: 100%;
+                margin: 0;
+                font-size: 0.9rem;
+                line-height: 1.4rem;
+                border: none;
+                >tbody {
+                    >tr {
+                        >td {
+                            padding: 0;
+                            color: #333;
+                            border: none;
+                            &.gutter {
+                                width: 1rem;
+                                background: #F8F8F8;
+                                pre {
+                                    padding: 1em 1.6em 1em 1em;
+                                    border-right: 1px solid $color-line;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    >footer {
+        >.tag-list {
+            display: flex;
+            >li {
+                >a {
+                    @include post-tag;
+                }
+            }
+        }
+    }
+}

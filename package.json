@@ -1,0 +1,24 @@
+{
+  "name": "sonne",
+  "version": "0.0.1",
+  "description": "Gut Ding will Weile haben.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jikkai/hexo-theme-sonne.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "blog"
+  ],
+  "author": "白熱大先生 <sonne@asaki.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jikkai/hexo-theme-sonne/issues"
+  },
+  "homepage": "https://blog.asaki.me",
+  "dependencies": {
+    "typo.css": "^2.1.2"
+  }
+}

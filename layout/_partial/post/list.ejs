@@ -1,0 +1,22 @@
+<article class="post">
+    <header>
+        <h1>
+            <a href="<%- url_for(post.path) %>">
+                <%= post.title %>
+            </a>
+        </h1>
+    </header>
+    <footer>
+        <div>
+            <span>
+                <%= config.author %>
+                <%- __('post_by') %>
+            </span>
+            <%- partial('category', {post: post}) %>
+            <time datetime="<%= date_xml(post.date) %>">
+                <%= date(post.date, config.date_format) %>
+            </time>
+        </div>
+        <%- partial('tag', {post: post}) %>
+    </footer>
+</article>

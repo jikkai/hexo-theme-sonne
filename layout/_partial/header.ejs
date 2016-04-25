@@ -1,0 +1,50 @@
+<header class="header">
+    <nav>
+        <h1>
+            <a href="<%= url_for() %>">
+                <%= config.title %>
+            </a>
+        </h1>
+        <ul>
+        <% for (var key in theme.menu) { %>
+            <li>
+                <a href="<%= theme.menu[key] %>"><%= key %></a>
+            </li>
+        <% } %>
+        </ul>
+    </nav>
+    <% if (typeof post === 'object') { %>
+        <div>
+            <div>
+                <h1>
+                    <a href="<%= config.root + config.archive_dir + '/' %>">
+                        <%= post.title %>
+                    </a>
+                </h1>
+
+                <section>
+                    <span>
+                        <%= config.author %>
+                        <%- __('post_by') %>
+                    </span>
+                    <%- partial('post/category', {post: post}) %>
+                    <time datetime="<%= date_xml(post.date) %>">
+                        <%= date(post.date, config.date_format) %>
+                    </time>
+                    <%- partial('post/tag', {post: post}) %>
+                </section>
+            </div>
+        </div>
+    <% } else { %>
+        <div>
+            <div>
+                <h1>
+                    <a href="<%= config.root + config.archive_dir + '/' %>">
+                        <%= config.title %>
+                    </a>
+                </h1>
+                <h2><%= config.subtitle %></h2>
+            </div>
+        </div>
+    <% } %>
+</header>

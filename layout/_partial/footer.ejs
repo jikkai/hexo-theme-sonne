@@ -1,0 +1,20 @@
+<footer class="footer">
+    <p>
+        <a href="<%= url_for() %>">
+            <%= config.title %>
+        </a>
+        &copy;
+        <% if (theme.since === new Date().getFullYear()) { %>
+            <%= new Date().getFullYear() %>
+        <% } else { %>
+            <%= theme.since + '-' + new Date().getFullYear() %>
+        <% } %>
+        <br>
+        Content By <%= config.author %>
+    </p>
+    <p>
+        Theme By <a href="https://github.com/jikkai">白熱大先生</a>
+    </p>
+</footer>
+<%- js('scripts/highlight') %>
+<%- js('scripts/main') %>

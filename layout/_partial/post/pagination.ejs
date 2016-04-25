@@ -1,0 +1,16 @@
+<% if (page.total > 1) { %>
+    <nav class="pagination">
+        <% if (page.prev_link) { %>
+            <a href="<%= config.root + page.prev_link %>">
+                <%- __('prev') %>
+            </a>
+        <% } else { %>
+            <span></span>
+        <% } %>
+        <% if (page.next_link) { %>
+            <a href="<%= config.root + page.next_link %>">
+                <%- __('next') %>
+            </a>
+        <% } %>
+    </nav>
+<% } %>

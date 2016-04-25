@@ -1,0 +1,22 @@
+.footer {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    a {
+        color: $color-post-title;
+        font-weight: bold;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+@media #{$mq-mobile} {
+    .footer {
+        text-align: center;
+        flex-direction: column;
+    }
+}

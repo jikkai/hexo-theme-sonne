@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%
+        var title = page.title;
+        if (is_archive()) {
+            title = __('archive');
+        } else if (is_category()) {
+            title = __('category') + ': ' + page.category;
+        } else if (is_tag()) {
+            title = __('tag') + ': ' + page.tag;
+        }
+    %>
+    <title><%= title ? title + ' | ' : '' %><%= config.title %></title>
+    <% if (theme.rss) { %>
+        <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <% } %>
+    <% if (theme.favicon) { %>
+        <link rel="icon" href="<%- theme.favicon %>">
+    <% } %>
+    <%- css('styles/main') %>
+</head>

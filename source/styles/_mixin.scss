@@ -1,0 +1,51 @@
+@mixin hyper-link {
+    color: $color-link;
+    text-decoration: none;
+    transition: color 0.3s;
+    &:hover {
+        color: $color-link-hover;
+    }
+}
+
+@mixin post-title {
+    color: $color-post-title;
+    font-size: 1.8rem;
+    font-weight: bold;
+    >a {
+        color: $color-post-title;
+        transition: color 0.3s;
+        &:hover {
+            color: darken($color-post-title, 10%);
+            text-decoration: none;
+        }
+    }
+}
+
+@mixin post-category {
+    margin: 0 0.5rem;
+    display: inline-block;
+    a {
+        color: $color-post-tag;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+@mixin post-tag {
+    margin-right: 0.5rem;
+    color: $color-post-tag;
+    font-size: 0.8rem;
+    &:hover {
+        text-decoration: none;
+    }
+    &::before {
+        content: '#';
+    }
+}
+
+@mixin post-time {
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+    border-left: 1px solid $color-line;
+}
