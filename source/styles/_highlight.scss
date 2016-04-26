@@ -1,73 +1,142 @@
-/*
-Date: 17.V.2011
-Author: pumbur <pumbur@pumbur.net>
-*/
+$highlight-color: #FFF;
+$highlight-foreground: #222;
+$highlight-comment: #999;
+$highlight-red: #BB1166;
+$highlight-orange: #FFCC33;
+$highlight-green: #00CC66;
+$highlight-purple: #6644AA;
 
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #222;
+figure {
+    &.highlight {
+        margin-bottom: 2.1em;
+        line-height: 1.45em;
+        font-size: 0.9em;
+        white-space: pre;
+        word-wrap: normal;
+        background: #FFF;
+        border: 1px solid #e1e1e1;
+        overflow: auto;
+        figcaption {
+            padding: 7px 10px;
+            font-size: 0.8em;
+        }
+        table {
+            margin: 0;
+            >tbody >tr >td {
+                padding: 0;
+                border: 0;
+                &.gutter {
+                    max-width: 40px;
+                    text-align: right;
+                    font-weight: bold;
+                }
+                &.code {
+                    width: 100%;
+                }
+            }
+        }
+        pre {
+            margin: 0;
+            border: none;
+        }
+        .line {
+            height: 20px;
+        }
+    }
+    img {
+        max-width: 100%;
+        margin: auto auto 4px;
+        display: block;
+        box-sizing: border-box;
+    }
+    figcaption {
+        position: absolute;
+        top: 172px;
+        left: -172px;
+        width: 150px;
+        margin-top: 0;
+        color: #BBBBBB;
+        line-height: 22px;
+        text-align: right;
+        font-size: 14px;
+        font-weight: 400;
+    }
 }
 
-.hljs,
-.hljs-subst {
-  color: #aaa;
-}
+pre {
+    color: $highlight-color;
+    background: $highlight-foreground;
+    code {
+        padding: 0;
+        color: $highlight-foreground;
+        background: none;
+        text-shadow: none;
+    }
+    .comment {
+        color: $highlight-comment;
+    }
 
-.hljs-section {
-  color: #fff;
-}
+    .variable,
+    .attribute,
+    .tag,
+    .regexp,
+    .ruby .constant,
+    .xml .tag .title,
+    .xml .pi,
+    .xml .doctype,
+    .html .doctype,
+    .css .id,
+    .css .class,
+    .css .pseudo {
+        color: $highlight-red;
+    }
 
-.hljs-comment,
-.hljs-quote,
-.hljs-meta {
-  color: #444;
-}
+    .number,
+    .preprocessor,
+    .built_in,
+    .literal,
+    .params,
+    .constant,
+    .command {
+        color: $highlight-green;
+    }
 
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-regexp {
-  color: #ffcc33;
-}
+    .ruby .class .title,
+    .css .rules .attribute,
+    .string,
+    .value,
+    .inheritance,
+    .header,
+    .ruby .symbol,
+    .xml .cdata,
+    .special,
+    .number,
+    .formula {
+        color: $highlight-orange;
+    }
 
-.hljs-number,
-.hljs-addition {
-  color: #00cc66;
-}
+    .title,
+    .css .hexcolor {
+        color: $highlight-green;
+    }
 
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-template-variable,
-.hljs-attribute,
-.hljs-link {
-  color: #32aaee;
-}
+    .function,
+    .python .decorator,
+    .python .title,
+    .ruby .function .title,
+    .ruby .title .keyword,
+    .perl .sub,
+    .javascript .title,
+    .coffeescript .title {
+        color: $highlight-red;
+    }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class {
-  color: #6644aa;
-}
+    .keyword,
+    .javascript .function {
+        color: $highlight-red;
+    }
 
-.hljs-title,
-.hljs-variable,
-.hljs-deletion,
-.hljs-template-tag {
-  color: #bb1166;
-}
-
-.hljs-section,
-.hljs-doctag,
-.hljs-strong {
-  font-weight: bold;
-}
-
-.hljs-emphasis {
-  font-style: italic;
+    .selector-tag {
+        color: $highlight-orange;
+    }
 }

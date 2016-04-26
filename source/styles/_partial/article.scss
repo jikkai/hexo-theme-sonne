@@ -17,6 +17,7 @@
         box-shadow: #FFF 0 0 0 0.5rem;
     }
     >section {
+        word-wrap: break-word;
         a {
             color: $color-post-title;
             border-bottom: 1px dashed $color-post-title;
@@ -31,7 +32,6 @@
         code {
             padding: 2px 4px;
             color: #C7254E;
-            font-family: $font-mono;
             font-size: 0.9rem;
             word-wrap: break-word;
             background: #F9F2F4;
@@ -49,38 +49,6 @@
             text-align: center;
             font-size: 0.9rem;
             display: block;
-        }
-        .highlight {
-            overflow: auto;
-            pre {
-                margin-bottom: 0;
-                border: none;
-                background: none;
-            }
-            table {
-                width: 100%;
-                margin: 0;
-                font-size: 0.9rem;
-                line-height: 1.4rem;
-                border: none;
-                >tbody {
-                    >tr {
-                        >td {
-                            padding: 0;
-                            color: #aaa;
-                            border: none;
-                            &.gutter {
-                                width: 1rem;
-                                background: #222;
-                                pre {
-                                    padding: 1em 1.6em 1em 1em;
-                                    border-right: 1px solid $color-line;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
     >footer {
