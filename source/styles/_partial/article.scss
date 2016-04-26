@@ -43,6 +43,13 @@
             font-style: italic;
             border-left: 2px solid $color-line;
         }
+        .alt {
+            margin-top: 0.6rem;
+            color: lighten($color-post-title, 20%);
+            text-align: center;
+            font-size: 0.9rem;
+            display: block;
+        }
         .highlight {
             overflow: auto;
             pre {
@@ -60,11 +67,11 @@
                     >tr {
                         >td {
                             padding: 0;
-                            color: #333;
+                            color: #aaa;
                             border: none;
                             &.gutter {
                                 width: 1rem;
-                                background: #F8F8F8;
+                                background: #222;
                                 pre {
                                     padding: 1em 1.6em 1em 1em;
                                     border-right: 1px solid $color-line;

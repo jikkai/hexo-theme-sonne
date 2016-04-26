@@ -37,6 +37,8 @@
             display: table-cell;
             background: rgba(0, 0, 0, 0.24);
             >h1 {
+                max-width: 710px;
+                margin: auto;
                 padding: 0 1rem;
                 font-size: 3rem;
                 font-weight: bold;
