@@ -1,10 +1,12 @@
 <% if (post.comments) { %>
-    <% if (theme.disqus) { %>
-        <div id="disqus_thread"></div>
-        <noscript>
-            Please enable JavaScript to view the
-            <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-        </noscript>
+    <div id="disqus_thread"></div>
+
+    <div class="ds-thread"
+         data-thread-key="<%= post._id %>"
+         data-title="<%= post.title %>"
+         data-url="<%= url_for(post.path) %>">
+    </div>
+    <% if (theme.disqus && !theme.fuckGxW) { %>
         <script>
             (function () {
                 var d = document, s = d.createElement('script');
@@ -13,13 +15,7 @@
                 (d.head || d.body).appendChild(s);
             })();
         </script>
-    <% } else if (theme.duoshuo) { %>
-        <div class="ds-thread"
-             data-thread-key="<%= post._id %>"
-             data-title="<%= post.title %>"
-             data-url="<%= url_for(post.path) %>">
-        </div>
-
+    <% } else if (theme.duoshuo && !theme.fuckGxW) { %>
         <script>
             var duoshuoQuery = {
                 short_name: '<%= theme.duoshuo %>'
@@ -31,6 +27,31 @@
         		(document.getElementsByTagName('head')[0]
         		 || document.getElementsByTagName('body')[0]).appendChild(ds);
         	})();
+        </script>
+    <% } else if (theme.fuckGxW && theme.duoshuo && theme.disqus) { %>
+        <script>
+            var duoshuoQuery = {
+                short_name: '<%= theme.duoshuo %>'
+            };
+            (function () {
+                var d = document, s = d.createElement('script');
+                s.src = '//<%= theme.disqus %>.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+
+                var g = d.createElement('img');
+                g.src = '//www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png';
+                setTimeout(function () {
+                    if (!g.complete) {
+                        document.querySelector('#disqus_thread').innerHTML = '';
+                		var ds = document.createElement('script');
+                        ds.async = true;
+                		ds.src = '//static.duoshuo.com/embed.js';
+                		(document.getElementsByTagName('head')[0]
+                		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    }
+                }, 7000);
+            })();
         </script>
     <% } %>
 <% } %>

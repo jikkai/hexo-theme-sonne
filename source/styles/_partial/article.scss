@@ -17,6 +17,7 @@
         box-shadow: #FFF 0 0 0 0.5rem;
     }
     >section {
+        font-family: $font-sans;
         word-wrap: break-word;
         a {
             color: $color-post-title;

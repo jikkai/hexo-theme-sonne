@@ -3,7 +3,9 @@ favicon: /images/favicon.ico
 rss: /atom.xml
 
 disqus: asaki
-#duoshuo: asaki
+duoshuo: asaki
+
+fuckGxW: true
 
 menu:
     博客: /archives/
