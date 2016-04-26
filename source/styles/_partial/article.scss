@@ -17,8 +17,10 @@
         box-shadow: #FFF 0 0 0 0.5rem;
     }
     >section {
-        font-family: $font-sans;
         word-wrap: break-word;
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
         a {
             color: $color-post-title;
             border-bottom: 1px dashed $color-post-title;

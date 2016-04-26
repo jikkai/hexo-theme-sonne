@@ -3,7 +3,7 @@ favicon: /images/favicon.ico
 rss: /atom.xml
 
 disqus: asaki
-duoshuo: asaki
+#duoshuo: asaki
 
 menu:
     博客: /archives/
