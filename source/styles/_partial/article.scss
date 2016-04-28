@@ -21,6 +21,9 @@
         h1, h2, h3, h4, h5, h6 {
             font-weight: normal;
         }
+        em {
+            font-style: italic;
+        }
         a {
             color: $color-post-title;
             border-bottom: 1px dashed $color-post-title;
