@@ -63,8 +63,8 @@
 <script>
     var patterns = document.querySelectorAll('.pattern');
     for (var i = 0; i < patterns.length; i++) {
-        var width = patterns[i].clientWidth + 10;
-        var height = patterns[i].clientHeight + 10;
+        var width = patterns[i].clientWidth * 2;
+        var height = patterns[i].clientHeight * 2;
         var pattern = Trianglify({
             width: width,
             height: height
