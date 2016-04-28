@@ -1,0 +1,76 @@
+<%
+    var content = JSON.parse(post._content);
+%>
+<article class="content">
+    <section class="typo">
+        <% for (var key in content) { %>
+            <div class="pattern">
+                <a href="<%= content[key].link %>" target="_blank">
+                    <h2><%= content[key].title %></h2>
+                    <p><%= content[key].description %></p>
+                </a>
+            </div>
+        <% } %>
+    </section>
+</article>
+
+<style>
+    .typo {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .typo .pattern {
+        position: relative;
+        width: 48%;
+        margin-bottom: 1rem;
+        text-align: center;
+        overflow: hidden;
+    }
+    .typo .pattern:nth-child(2n) {
+        margin-left: 2%;
+    }
+    .typo .pattern a {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        padding: 1rem 1.5rem;
+        border: none;
+        display: block;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+        transition: all 0.3s;
+    }
+    .typo .pattern a:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    .typo .pattern h2 {
+        color: #FFF;
+        font-size: 1.4rem;
+        font-weight: 300;
+    }
+    .typo .pattern p {
+        color: #FFF;
+        font-size: 0.9rem;
+    }
+    .typo .pattern canvas {
+        position: absolute;
+        z-index: 0;
+    }
+</style>
+
+<%- js('scripts/trianglify.min') %>
+<script>
+    var patterns = document.querySelectorAll('.pattern');
+    for (var i = 0; i < patterns.length; i++) {
+        var width = patterns[i].clientWidth + 10;
+        var height = patterns[i].clientHeight + 10;
+        var pattern = Trianglify({
+            width: width,
+            height: height
+        });
+        var canvas = pattern.canvas();
+        canvas.style.margin = '-' + height + 'px 0 0 -' + width / 2 + 'px';
+        patterns[i].appendChild(canvas);
+    }
+</script>

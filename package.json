@@ -19,6 +19,5 @@
   },
   "homepage": "https://blog.asaki.me",
   "dependencies": {
-    "typo.css": "^2.1.2"
   }
 }
