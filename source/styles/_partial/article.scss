@@ -31,11 +31,15 @@
         img {
             max-width: 100%;
             margin: auto;
+            background: #000;
             border: 1px solid $color-link;
             display: block;
+            box-shadow: 0 0 4px 0px $color-post-title;
+            opacity: 0.7;
             transition: all .5s;
             &:hover {
-                box-shadow: 0 0 4px 0px $color-post-title;
+                opacity: 1;
+                box-shadow: 0 0 1px 0px $color-post-title;
             }
         }
         code {
