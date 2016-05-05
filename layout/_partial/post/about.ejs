@@ -3,16 +3,22 @@
 
     // 转换{TAG}
     content = content.replace(/\{TAG\}[\S\n]*\{\/TAG\}/g, function (element, index) {
-        element = element.replace(/(\{TAG\})|(\{\/TAG\})/g,'');
+        element = element.replace(/(\{TAG\})|(\{\/TAG\})/g, '');
         var elementArr = element.replace(/<[a-z]*>/g, '').split(',');
         element = elementArr.join('</label><label class="about-tag">');
-        return '<label class="about-tag">' + element + '</label>';
+        return '<label class="about-tag active">' + element + '</label>';
     });
 
-    // 转换script
-    var script = content.match(/<script>[\S\s]*<\/script>/g);
+    // 转换{CHART}
+    content = content.replace(/\{CHART\}[\S\n]*\{\/CHART\}/g, function (element, index) {
+        return '<div id="chart" style="width:100%;height:400px;max-width:100%"></div>';
+    });
 
-    content = content.replace(/<script>[\S\s]*<\/script>/g, '');
+    // 转换{SCRIPT}
+    var script = post._content.match(/\{SCRIPT\}[\S\s]*\{\/SCRIPT\}/g);
+    script = script ? script[0].replace(/(\{SCRIPT\})|(\{\/SCRIPT\})/g, '') : '';
+
+    content = content.replace(/\{SCRIPT\}[\S\s]*\{\/SCRIPT\}/g, '');
 %>
 <article class="content">
     <section class="typo">
@@ -21,6 +27,7 @@
 </article>
 
 <style>
+
 .about-tag {
     margin-right: 1em;
     margin-bottom: 1em;
@@ -28,8 +35,16 @@
     border: 1px solid #9EABB3;
     border-radius: .6em;
     display: inline-block;
+    cursor: pointer;
+    transition: all .3s;
+}
+.about-tag:hover {
+    color: #FFF;
+    background: #9EABB3;
 }
 </style>
 
 <script src="//cdn.bootcss.com/echarts/3.0.0/echarts.min.js"></script>
-<%- script %>
+<script>
+    <%- script %>
+</script>
