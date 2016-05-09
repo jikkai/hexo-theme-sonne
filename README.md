@@ -25,6 +25,7 @@ git pull
 You can modify the theme setting in Sonne's `_config.yml`.
 
 ```
+keywords: blog,hexo
 since: 2016
 favicon: /images/favicon.ico
 rss: /atom.xml
