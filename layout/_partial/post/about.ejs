@@ -5,7 +5,7 @@
         var _content = post._content.match(/\{SOCIAL\}[\S\s]*\{\/SOCIAL\}/g);
         _content = _content ? _content[0].replace(/(\{SOCIAL\})|(\{\/SOCIAL\})/g, '') : '';
         var social = JSON.parse(_content);
-        var html = '<div class="about-social">';
+        var html = '<div style="max-width:100%;padding-bottom:1rem;overflow:auto;">';
         for (var key in social) {
             var icon = social[key];
             for (var key in icon) {
