@@ -60,16 +60,21 @@
                                     'background: rgba(0, 0, 0, 0.8);' +
                                     'cursor: pointer;' +
                                     'display: flex;' +
-                                    'align-items: center;';
+                                    'align-items: center;' +
+                                    'transition: opacity .4s;' +
+                                    'animation: fadeIn .4s;';
 
                 var fixDocumentHandler = function (e) {
                     e.preventDefault();
                 };
 
                 div.addEventListener('click', function () {
-                    document.body.removeChild(div);
-                    document.body.removeEventListener('mousewheel', fixDocumentHandler, false);
-                    document.body.removeEventListener('touchmove', fixDocumentHandler, false);
+                    div.style.opacity = '0';
+                    setTimeout(function () {
+                        document.body.removeChild(div);
+                        document.body.removeEventListener('mousewheel', fixDocumentHandler, false);
+                        document.body.removeEventListener('touchmove', fixDocumentHandler, false);
+                    }, 400);
                 }, false);
 
                 document.body.addEventListener('mousewheel', fixDocumentHandler, false);

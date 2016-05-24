@@ -44,6 +44,9 @@
                 font-size: 3rem;
                 font-weight: bold;
                 box-sizing: border-box;
+                &.title {
+                    font-size: 2.4rem;
+                }
             }
             >h2 {
                 color: $color-link;
