@@ -1,8 +1,9 @@
 # Sonne
 
-Simple hexo theme.
+Flexible and lightweight hexo theme. | [Live Demo](https://blog.asaki.me)
 
-![preview](https://cloud.githubusercontent.com/assets/14025786/15006476/e9803e32-1203-11e6-8a28-1cb0ae769a0d.png)
+![preview](https://cloud.githubusercontent.com/assets/14025786/15501289/48429f06-21df-11e6-953f-e4d2854a2642.png)
+
 
 ## Install
 
