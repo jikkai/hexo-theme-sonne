@@ -17,16 +17,44 @@
         box-shadow: #FFF 0 0 0 0.5rem;
     }
     >section {
+        color: $color-post;
         word-break: break-all;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         h1, h2, h3, h4, h5, h6 {
+            color: $color-post;
             font-weight: normal;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: center;
+            &:hover {
+                >a {
+                    margin-left: 1rem;
+                    color: $color-post-link;
+                    font-size: .8em;
+                    border: 0;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    &::after {
+                        content: '#';
+                    }
+                }
+            }
         }
         em {
             font-style: italic;
         }
         a {
-            color: $color-post-title;
-            border-bottom: 1px dashed $color-post-title;
+            color: $color-post-link;
+            border-bottom: 1px dashed lighten($color-post-link, 10%);
+            transition: color .2s;
+            &:hover {
+                color: lighten($color-post-link, 10%);
+                border-bottom: 1px dashed lighten($color-post-link, 10%);
+            }
         }
         img {
             max-width: 100%;
@@ -54,8 +82,13 @@
         blockquote {
             margin-left: 0;
             margin-right: 0;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
             font-style: italic;
-            border-left: 2px solid $color-line;
+            border-left: 4px solid $color-post-quote;
+            >p {
+                margin: 0;
+            }
         }
         .alt {
             margin-top: 0.6rem;
