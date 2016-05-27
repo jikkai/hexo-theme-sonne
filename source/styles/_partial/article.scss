@@ -65,7 +65,7 @@
             box-shadow: 0 0 4px 0px $color-post-title;
             opacity: 0.9;
             transition: all .5s;
-            cursor: pointer;
+            cursor: zoom-in;
             &:hover {
                 opacity: 1;
                 box-shadow: 0 0 1px 0px $color-post-title;
